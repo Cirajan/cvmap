@@ -73,7 +73,7 @@ def index():
 
 
     #save map to current dir
-    folium_map.save('templates/cvmap.html')
+    #folium_map.save('templates/cvmap.html')
 
 
 
@@ -85,8 +85,8 @@ def index():
 
 
 
-if __name__ == '__main__':
-    app.run()
+# if __name__ == '__main__':
+#     app.run()
 # @app.route('/upload_pic', methods=['POST'])
 # def upload_pic():
 #     photo_object = request.files['pic']
