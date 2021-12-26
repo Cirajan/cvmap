@@ -19,12 +19,14 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def index():
 
+
     #url1 = 'https://www.corra.com.au/downloads/Australian_Post_Codes_Lat_Lon.zip'
     url = 'https://data.nsw.gov.au/data/dataset/aefcde60-3b0c-4bc0-9af1-6fe652944ec2/resource/21304414-1ff1-4243-a5d2-f52778048b29/download/confirmed_cases_table1_location.csv'
 
-    df = pd.read_csv('Australian_Post_Codes_Lat_Lon.csv')
+    target1 = os.path.join(APP_ROOT, 'Australian_Post_Codes_Lat_Lon.csv')
+    df = pd.read_csv(target1)
+    #target2 = os.path.join(APP_ROOT, 'confirmed_cases_table1_location.csv')
     df1 = pd.read_csv(url)
-
 
     #remove any rows that have any value as a nan
     df1 = df1.replace(to_replace='None', value=np.nan).dropna()
