@@ -30,7 +30,7 @@ ratelim==0.1.6
 requests==2.23.0
 six==1.14.0
 typing_extensions==4.0.1
-urllib3==1.25.8
+urllib3==1.26.5
 virtualenv==20.0.10
 Werkzeug==1.0.1
 zipp==3.1.0
