@@ -35,11 +35,11 @@ def index():
     # date = datetime.today().strftime('%Y-%m-%d')
     tod = datetime.today()
     fortnightAgo = (tod - timedelta(days=14)).strftime('%Y-%m-%d')
-    print(fortnightAgo)
+    #print(fortnightAgo)
 
     #Remove entries for covid cases older than 2 weeks
     df1 = df1[df1['notification_date'] >= fortnightAgo]
-    print(df1)
+    #print(df1)
 
     #make a list of all postcodes that have covid cases and remove duplicate postcodes
     pc_list = df1['postcode'].tolist()
@@ -50,6 +50,7 @@ def index():
     #create a dict Key = suburb, value = number of covid cases
     count_persub = df1['postcode'].value_counts().to_dict()
     count_persub = {int(k):v for k,v in count_persub.items()}
+    #print(count_persub)
 
 
     #reduce lat and lon df to only those postcodes with covid cases and again remove duplictes
@@ -75,7 +76,7 @@ def index():
 
 
     #save map to current dir
-    #folium_map.save('templates/cvmap.html')
+    folium_map.save('templates/cvmap.html')
 
 
 
