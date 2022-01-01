@@ -76,7 +76,8 @@ def index():
 
 
     #save map to current dir
-    folium_map.save('templates/cvmap.html')
+    targ = os.path.join(APP_ROOT, 'templates/cvmap.html')
+    folium_map.save(targ)
 
 
 
